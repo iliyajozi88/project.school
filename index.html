@@ -4,30 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-
-    <link rel="stylesheet" href="asset/style.css">
 </head>
 <body>
-    <nav>
-        <div class="menu">
-            <div class="left">
-                <a href="#">Logo</a>
-            </div>
-            <div class="center">
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Login</a></li>
-                    <li><a href="#">Register</a></li>
-                    <li><a href="#">About Us</a></li>
-                </ul>
-            </div>
-            <div class="right">
-                <form action="index.html" method="post">
-                    <input type="search" placeholder="Search...">
-                    <input type="submit" value="Search">
-                </form>
-            </div>
-        </div>
-    </nav>
+    <input type="text" placeholder="enter your text :" id="username">
+    <br><br>
+    <button type="button" id="btn"onclick="change_text()"disabled>change text</button>
+    <p id="demo"></p>
+    
 </body>
 </html>
+<script>
+    const btn=document.getElementById("btn")
+    const input=document.getElementById("username")
+    const demo=document.getElementById("demo")
+    input.addEventListener('input',function(){
+        if(input.value.length > 0){
+            
+            btn.disabled=false
+        }
+        else{
+            btn.disabled=true
+        }
+    })
+    btn.addEventListener('click',function(){
+        demo.innerText='hello wellcome to ym site'
+    })
+</script>
